@@ -26,7 +26,7 @@ header {
   text-decoration: underline;
 }
 
-/* 預設：假設橫向且寬度充足，使用 flex 水平排列，不換行 */
+/* 預設：假設螢幕橫向且寬度充足（例如 ≥800px），使用 flex 水平排列 */
 .button-container {
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@ header {
   margin: 5px;
 }
 
-/* 橫向且寬度較窄時，改用 grid 以達到上三下二排列 */
+/* 橫向且寬度不足時（max-width:800px 且 orientation: landscape）：上三下二排列 */
 @media (max-width: 800px) and (orientation: landscape) {
   .button-container {
     display: grid;
@@ -53,12 +53,17 @@ header {
   }
 }
 
-/* 直向（portrait）：改為垂直排列 */
+/* 直向 (portrait)：垂直排列，且按鈕寬度與內容區一致 */
 @media (orientation: portrait) {
   .button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .button-container button {
+    width: 100%;
   }
 }
 
