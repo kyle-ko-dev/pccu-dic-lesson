@@ -32,7 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  margin-top: 200px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 
@@ -53,17 +53,17 @@ header {
   }
 }
 
-/* 直向 (portrait)：垂直排列，且按鈕寬度與內容區一致 */
+/* 直向 (portrait)：垂直排列，按鈕容器與按鈕寬度與內容區相同 */
 @media (orientation: portrait) {
   .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 20px auto;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 90% !important;
+    margin: 20px auto !important;
   }
   .button-container button {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
