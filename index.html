@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>文大資傳課程清單-依照領域分類</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .info {
+        width: 90%;
+        margin: 20px auto;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .info a {
+        color: blue;
+        text-decoration: underline;
+      }
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .button-container button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .content {
+        width: 90%;
+        margin: 0 auto 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #333;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>文大資傳課程清單-依照領域分類</header>
+
+    <!-- 說明區域 -->
+    <div class="info">
+      <p>
+        本網站的課程內容由chatGPT抓取並整理，非即時資料，詳細請見
+        <a href="http://www.gcd.pccu.edu.tw/resources.php" target="_blank"
+          >中國文化大學資訊傳播學系網站</a
+        >。
+      </p>
+      <p>
+        如有任何使用上的問題，或者版權疑慮請
+        <a href="mailto:kkyleko@outlook.com">寄送電子郵件聯絡開發者</a>。
+      </p>
+    </div>
+
+    <div id="buttonContainer" class="button-container">
+      <!-- 按鈕將由 JSON 資料動態產生 -->
+    </div>
+
+    <div class="content">
+      <div id="tableContainer"></div>
+    </div>
+
+    <script>
+      let tableData = {};
+
+      // 載入 JSON 檔案
+      fetch("data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          tableData = data;
+          // 根據 JSON 中各表格的 title 動態建立按鈕
+          const btnContainer = document.getElementById("buttonContainer");
+          Object.keys(tableData).forEach((key) => {
+            const btn = document.createElement("button");
+            btn.textContent = tableData[key].title;
+            btn.onclick = () => showTable(key);
+            btnContainer.appendChild(btn);
+          });
+          // 初始顯示第一筆資料
+          const firstKey = Object.keys(tableData)[0];
+          showTable(firstKey);
+        })
+        .catch((error) => console.error("載入 JSON 發生錯誤:", error));
+
+      function showTable(tableId) {
+        const container = document.getElementById("tableContainer");
+        container.innerHTML = ""; // 清空內容
+        if (!tableData[tableId]) {
+          container.innerHTML = "無資料";
+          return;
+        }
+        const tableObj = tableData[tableId];
+
+        // 建立標題
+        const h2 = document.createElement("h2");
+        h2.textContent = tableObj.title;
+        container.appendChild(h2);
+
+        // 建立 table 元素
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const headerRow = document.createElement("tr");
+        tableObj.headers.forEach((headerText) => {
+          const th = document.createElement("th");
+          th.textContent = headerText;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement("tbody");
+        tableObj.rows.forEach((row) => {
+          const tr = document.createElement("tr");
+
+          const td1 = document.createElement("td");
+          td1.textContent = row.courseName;
+          tr.appendChild(td1);
+
+          const td2 = document.createElement("td");
+          td2.textContent = row.attribute;
+          tr.appendChild(td2);
+
+          const td3 = document.createElement("td");
+          td3.textContent = row.yearGroup;
+          tr.appendChild(td3);
+
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        container.appendChild(table);
+      }
+    </script>
+  </body>
+</html>

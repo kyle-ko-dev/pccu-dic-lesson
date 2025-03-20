@@ -1,0 +1,71 @@
+{
+  "table1": {
+    "title": "資訊技術與程式設計領域",
+    "headers": ["課程名稱", "屬性", "年級/學群"],
+    "rows": [
+      {"courseName": "基礎程式設計", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "應用程式設計資訊網路科技", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "應用程式設計", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "資料庫設計與應用", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "行動APP設計與開發", "attribute": "必修／選修", "yearGroup": "大三必修／跨媒體資訊應用學群"},
+      {"courseName": "行動裝置程式開發", "attribute": "選修", "yearGroup": "跨媒體資訊應用學群"},
+      {"courseName": "人工智慧概論", "attribute": "選修", "yearGroup": "跨媒體資訊應用學群"},
+      {"courseName": "雲端應用設計", "attribute": "選修", "yearGroup": "跨媒體資訊應用學群"}
+    ]
+  },
+  "table2": {
+    "title": "視覺傳達與設計領域",
+    "headers": ["課程名稱", "屬性", "年級/學群"],
+    "rows": [
+      {"courseName": "設計基礎", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "色彩學", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "字型與版面編排", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "數位影像", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "視覺傳播設計", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "色彩度量與影像複製", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "色彩規劃與傳播應用", "attribute": "必修", "yearGroup": "大三"},
+      {"courseName": "3D基礎動畫", "attribute": "選修", "yearGroup": "跨媒體資訊應用學群"},
+      {"courseName": "資訊視覺化設計", "attribute": "選修", "yearGroup": "跨媒體資訊應用學群"},
+      {"courseName": "影像藝術設計", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "數位插畫", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "創意與設計", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "動態設計", "attribute": "選修", "yearGroup": "數位內容創製學群"}
+    ]
+  },
+  "table3": {
+    "title": "傳播理論與管理領域",
+    "headers": ["課程名稱", "屬性", "年級"],
+    "rows": [
+      {"courseName": "資訊傳播概論", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "資訊傳播服務管理", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "資訊社會學", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "傳播理論", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "傳播統計學", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "傳播研究方法", "attribute": "必修", "yearGroup": "大三"},
+      {"courseName": "傳播專題企劃與撰寫", "attribute": "必修", "yearGroup": "大三"}
+    ]
+  },
+  "table4": {
+    "title": "多媒體、影音與媒介製作技術領域",
+    "headers": ["課程名稱", "屬性", "年級/學群"],
+    "rows": [
+      {"courseName": "數位攝影", "attribute": "必修", "yearGroup": "大一"},
+      {"courseName": "多媒體與動畫製作", "attribute": "必修", "yearGroup": "大二（內容涵蓋製作技術，可跨設計領域）"},
+      {"courseName": "多媒體音效與配樂", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "數位影音特效製作", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "多媒體影視企劃製作", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "數位影音整合製作", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "應用攝影實務", "attribute": "選修", "yearGroup": "數位內容創製學群"},
+      {"courseName": "3D動畫製作", "attribute": "特色課程", "yearGroup": "特色課程"},
+      {"courseName": "印刷傳播科技", "attribute": "必修", "yearGroup": "大三（媒介製作技術課程）"}
+    ]
+  },
+  "table5": {
+    "title": "數據分析與數位行銷領域",
+    "headers": ["課程名稱", "屬性", "年級"],
+    "rows": [
+      {"courseName": "數據分析概論", "attribute": "必修", "yearGroup": "大二"},
+      {"courseName": "數位行銷", "attribute": "必修", "yearGroup": "大二"}
+    ]
+  }
+}
