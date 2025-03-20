@@ -8,7 +8,7 @@
   <body>
     <header>文大資傳課程-依專業領域分類</header>
 
-    <!-- 說明區域 -->
+    <!-- 說明區 -->
     <div class="info">
       <p>
         本網站的課程內容由chatGPT抓取並整理，非即時資料，詳細請見
@@ -22,11 +22,12 @@
       </p>
     </div>
 
-    <!-- 按鈕區 -->
+    <!-- 按鈕區：按鈕會根據 JSON 資料中的 title 動態產生 -->
     <div id="buttonContainer" class="button-container">
-      <!-- 按鈕將由 JSON 資料動態產生 -->
+      <!-- 按鈕將由 JavaScript 動態產生 -->
     </div>
 
+    <!-- 表格顯示區 -->
     <div class="content">
       <div id="tableContainer"></div>
     </div>
@@ -34,12 +35,11 @@
     <script>
       let tableData = {};
 
-      // 載入 JSON 檔案
+      // 載入 JSON 資料
       fetch("data.json")
         .then((response) => response.json())
         .then((data) => {
           tableData = data;
-          // 根據 JSON 中各表格的 title 動態建立按鈕
           const btnContainer = document.getElementById("buttonContainer");
           Object.keys(tableData).forEach((key) => {
             const btn = document.createElement("button");
@@ -67,7 +67,7 @@
         h2.textContent = tableObj.title;
         container.appendChild(h2);
 
-        // 建立 table 元素
+        // 建立表格
         const table = document.createElement("table");
         const thead = document.createElement("thead");
         const headerRow = document.createElement("tr");

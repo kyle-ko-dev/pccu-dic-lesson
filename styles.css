@@ -26,27 +26,40 @@ header {
   text-decoration: underline;
 }
 
+/* 預設：假設橫向且寬度充足，使用 flex 水平排列，不換行 */
 .button-container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 10px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   margin-top: 200px;
   margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-  .button-container {
-    grid-template-columns: 1fr;
-    width: 90%;
-    margin: 20px auto;
-  }
 }
 
 .button-container button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  margin: 5px;
+}
+
+/* 橫向且寬度較窄時，改用 grid 以達到上三下二排列 */
+@media (max-width: 800px) and (orientation: landscape) {
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: auto;
+    justify-content: center;
+  }
+}
+
+/* 直向（portrait）：改為垂直排列 */
+@media (orientation: portrait) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .content {
